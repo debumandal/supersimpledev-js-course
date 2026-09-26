@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Variable</title>
+  </head>
+  <body>
+    <p><a href="../index.html">Back to Home</a></p>
+
+    <button onclick="console.log(`Cart quantity: ${cardQuantity}`)">
+      Show Quantity
+    </button>
+    <button
+      onclick="
+        cardQuantity++;
+        console.log(`cart quantity: ${cardQuantity}`);
+      "
+    >
+      Add to cart
+    </button>
+    <button
+      onclick="
+        cardQuantity += 2;
+        console.log(`cart quantity: ${cardQuantity}`);
+      "
+    >
+      +2
+    </button>
+    <button
+      onclick="
+        cardQuantity += 3;
+        console.log(`card quantity: ${cardQuantity}`);
+      "
+    >
+      +3
+    </button>
+
+    <button
+      onclick="
+        cardQuantity += 4;
+        console.log(`card quantity: ${cardQuantity}`);
+      "
+    >
+      +4
+    </button>
+    <button
+      onclick="
+        cardQuantity += 5;
+        console.log(`card quantity: ${cardQuantity}`);
+      "
+    >
+      +5
+    </button>
+
+    <button
+      onclick="
+        cardQuantity--;
+        console.log(`card quantity: ${cardQuantity}`);
+      "
+    >
+      Remove from cart
+    </button>
+
+    <button
+      onclick="
+        cardQuantity -= 2;
+        console.log(`card quantity: ${cardQuantity}`);
+      "
+    >
+      -2
+    </button>
+
+    <button
+      onclick="
+        cardQuantity -= 3;
+        console.log(`card quantity: ${cardQuantity}`);
+      "
+    >
+      -3
+    </button>
+
+    <button
+      onclick="
+        cardQuantity = 0;
+        console.log('Cart was reset.');
+      "
+    >
+      Reset Cart
+    </button>
+
+    <!-- Challenge Exercises -->
+    <p><a href="./calculator.html">Calculator</a></p>
+
+    <script>
+      let cardQuantity = 0;
+
+      const name = "Debu";
+      console.log(`My name is: ${name}`);
+      let cost = 5 + 2 * 3 + 9;
+      console.log(`Cost of food: $${cost}`);
+      let tax = cost * 0.1;
+      console.log(`tax(10%): $${tax}`);
+      let totalCost = cost + tax;
+      console.log(`Total cost: $${totalCost}`);
+    </script>
+  </body>
+</html>
