@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise</title>
+  </head>
+  <body>
+    <p><a href="./08-object.html">Back</a></p>
+    <script>
+      //8a.
+      // const product = {
+      //   name: "basketball",
+      //   price: 2095,
+      // };
+      // console.log(product);
+      // console.log(product.name);
+      // console.log(product.price);
+
+      //8b.
+      // product.price = 2595;
+      // console.log(product);
+
+      //8c.
+      // product["delivery-time"] = "3 days";
+      // console.log(product);
+
+      //8d.
+      const product = {
+        product1: {
+          name: "basketball",
+          price: 5000,
+        },
+
+        product2: {
+          name: "shoes",
+          price: 3303,
+        },
+
+        comparePrice(product1, product2) {
+          if (product1.price < product2.price) {
+            console.log(
+              `${product1.name} is less expansive and it price is ${product1.price}`,
+            );
+          } else if (product2.price < product1.price) {
+            console.log(
+              `${product2.name} is less expansive and it price is ${product2.price}`,
+            );
+          }
+        },
+        //8e.
+        isSameProduct(product1, product2) {
+          if (
+            product1.name === product2.name &&
+            product1.price === product2.price
+          ) {
+            return true;
+          } else {
+            return false;
+          }
+        },
+      };
+      product.comparePrice(product.product1, product.product2);
+      console.log(product.isSameProduct(product.product1, product.product2));
+    </script>
+  </body>
+</html>

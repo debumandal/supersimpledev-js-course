@@ -70,7 +70,7 @@
 
       <button
         onclick="
-          calculation -= ' - ';
+          calculation += ' - ';
           console.log(calculation);
         "
       >
@@ -106,7 +106,7 @@
 
       <button
         onclick="
-          calculation *= ' * ';
+          calculation += ' * ';
           console.log(calculation);
         "
       >
@@ -134,11 +134,31 @@
 
       <button
         onclick="
-          calculation /= ' / ';
+          calculation += '.';
+          console.log(calculation);
+        "
+      >
+        .
+      </button>
+
+      <button
+        onclick="
+          calculation += ' / ';
           console.log(calculation);
         "
       >
         /
+      </button>
+    </p>
+
+    <p>
+      <button
+        onclick="
+          calculation = '';
+          console.log('cleared.');
+        "
+      >
+        Clear
       </button>
     </p>
 

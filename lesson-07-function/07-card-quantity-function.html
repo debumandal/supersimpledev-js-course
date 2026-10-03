@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Improved card quantity</title>
+  </head>
+  <body>
+    <p>
+      <a href="./07-function.html">Back</a>
+    </p>
+    <button onclick="console.log(`Cart quantity: ${cardQuantity}`)">
+      Show Quantity
+    </button>
+    <button onclick="updateCartQuantity(1)">Add to cart</button>
+    <button onclick="updateCartQuantity(2)">+2</button>
+    <button onclick="updateCartQuantity(3)">+3</button>
+
+    <button onclick="updateCartQuantity(4)">+4</button>
+    <button onclick="updateCartQuantity(5)">+5</button>
+
+    <button onclick="updateCartQuantity(-1)">Remove from cart</button>
+
+    <button onclick="updateCartQuantity(-2)">-2</button>
+
+    <button onclick="updateCartQuantity(-3)">-3</button>
+
+    <button
+      onclick="
+        cardQuantity = 0;
+        console.log('Cart was reset.');
+      "
+    >
+      Reset Cart
+    </button>
+
+    <script>
+      let cardQuantity = 0;
+
+      function updateCartQuantity(number) {
+        // 7k
+        // if (cardQuantity + number > 10) {
+        //   alert("The cart is full");
+        // } else if (cardQuantity + number < 0) {
+        //   alert("Not enough items in the cart");
+        // } else {
+        //   cardQuantity += number;
+        //   console.log(`cart quantity: ${cardQuantity}`);
+        // }
+
+        // 7l
+        if (cardQuantity + number > 10) {
+          alert("The cart is full");
+          return;
+        }
+
+        if (cardQuantity + number < 0) {
+          alert("Not enough items in the cart");
+          return;
+        }
+
+        cardQuantity += number;
+        console.log(`cart quantity: ${cardQuantity}`);
+      }
+    </script>
+  </body>
+</html>

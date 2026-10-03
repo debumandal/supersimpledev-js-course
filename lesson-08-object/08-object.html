@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Objects</title>
+  </head>
+  <body>
+    <p><a href="../index.html">Back to home</a></p>
+
+    <p><a href="./08-rock-paper-scissors.html">Rock Paper Scissor</a></p>
+
+    <p><a href="./08-exrecise.html">08-Exercise</a></p>
+    <p><a href="./08-calculator.html">Calculator</a></p>
+    <p><a href="./08-coin-flip.html">Coin-Flip</a></p>
+    <script>
+      /*
+      const product = {
+        name: "socks",
+        price: 1090,
+      };
+      console.log(product);
+      console.log(product.name);
+      console.log(product.price);
+
+      product.name = "cotton socks";
+      console.log(product);
+      // undefined case
+      console.log(product.design);
+
+      product.newProperty = "color";
+      console.log(product);
+      delete product.newProperty;
+      console.log(typeof product);
+      */
+
+      const product2 = {
+        rating: 4.5,
+        count: 87,
+        option: {
+          first_shop: 90,
+          second_shop: 88,
+          third_shop: 85,
+        },
+        "delivery-time": "1 Day",
+        fun: function function1() {
+          console.log(
+            "We can use function inside object because it is a type of value",
+          );
+        },
+      };
+
+      console.log(product2.rating);
+      console.log(product2.count);
+      // in a particular situation we can't use dot notation
+      // console.log(product2.'delivery-time')
+      // we use square brackets
+      console.log(product2["delivery-time"]);
+      console.log(product2.fun);
+      console.log(product2.option.first_shop);
+
+      console.log(JSON.stringify(product2));
+      const jsonString = JSON.stringify(product2);
+      console.log(JSON.parse(jsonString));
+
+      const object = {
+        message: "hello",
+        price: 799,
+      };
+
+      const { message, price } = object;
+      console.log(message);
+      console.log(price);
+    </script>
+  </body>
+</html>
