@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Displaying cart quantity</title>
+  </head>
+  <body>
+    <p>
+      <a href="./09-dom.html">Back</a>
+    </p>
+    <button onclick="quantity()">Show Quantity</button>
+    <button onclick="updateCartQuantity(1)">Add to cart</button>
+    <button onclick="updateCartQuantity(2)">+2</button>
+    <button onclick="updateCartQuantity(3)">+3</button>
+
+    <button onclick="updateCartQuantity(4)">+4</button>
+    <button onclick="updateCartQuantity(5)">+5</button>
+
+    <button onclick="updateCartQuantity(-1)">Remove from cart</button>
+
+    <button onclick="updateCartQuantity(-2)">-2</button>
+
+    <button onclick="updateCartQuantity(-3)">-3</button>
+
+    <button
+      onclick="
+        cartQuantity = 0;
+        console.log('Cart was reset.');
+        quantity();
+      "
+    >
+      Reset Cart
+    </button>
+
+    <p class="js-cart-quantity"></p>
+
+    <script>
+      let cartQuantity = 0;
+
+      quantity();
+
+      function quantity() {
+        const quantity = (document.querySelector(
+          ".js-cart-quantity",
+        ).textContent = `cart quantity: ${cartQuantity}`);
+      }
+
+      function updateCartQuantity(number) {
+        // 7k
+        // if (cardQuantity + number > 10) {
+        //   alert("The cart is full");
+        // } else if (cardQuantity + number < 0) {
+        //   alert("Not enough items in the cart");
+        // } else {
+        //   cardQuantity += number;
+        //   console.log(`cart quantity: ${cardQuantity}`);
+        // }
+
+        // 7l
+        if (cartQuantity + number > 10) {
+          alert("The cart is full");
+          return;
+        }
+
+        if (cartQuantity + number < 0) {
+          alert("Not enough items in the cart");
+          return;
+        }
+
+        cartQuantity += number;
+        console.log(`cart quantity: ${cartQuantity}`);
+
+        quantity();
+      }
+    </script>
+  </body>
+</html>

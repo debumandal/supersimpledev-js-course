@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 9g.</title>
+  </head>
+  <body>
+    <p><a href="./09-dom.html">Back</a></p>
+    <p>Amazon Shipping Calculator</p>
+    <input
+      class="js-input-element"
+      placeholder="cost of order"
+      onkeydown="handleCostKeyDown(event)"
+    />
+    <button onclick="shippingCalculator()" class="js-button-element">
+      Calculate
+    </button>
+    <p class="js-total-cost"></p>
+
+    <script>
+      function handleCostKeyDown(event) {
+        if (event.key === "Enter") {
+          shippingCalculator();
+        }
+      }
+
+      function shippingCalculator() {
+        const inputElement = document.querySelector(".js-input-element");
+
+        let cost = Number(inputElement.value);
+
+        if (cost < 40) {
+          cost = cost + 10;
+        } else {
+          cost;
+        }
+
+        document.querySelector(".js-total-cost").innerHTML =
+          `$${Math.round(cost)}`;
+      }
+
+      function subscribe() {
+        const subscribeButton = document.querySelector(".js-subscribe-button");
+
+        if (subscribeButton.innerText === "Subscribe") {
+          subscribeButton.innerText = "Subscribed";
+        } else {
+          subscribeButton.innerText = "Subscribe";
+        }
+      }
+    </script>
+  </body>
+</html>

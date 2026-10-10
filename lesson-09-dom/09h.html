@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 9h</title>
+  </head>
+  <body>
+    <p><a href="./09-dom.html">Back</a></p>
+    <input
+      type="text"
+      placeholder="Type something"
+      onkeyup="inputElement()"
+      class="js-input-element"
+    />
+    <p class="js-text-input"></p>
+    <script>
+      function inputElement() {
+        const text = document.querySelector(".js-input-element").value;
+        document.querySelector(".js-text-input").innerHTML = text;
+      }
+    </script>
+  </body>
+</html>

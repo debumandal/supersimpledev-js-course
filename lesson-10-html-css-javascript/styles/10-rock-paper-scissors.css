@@ -1,0 +1,43 @@
+body {
+  background-color: rgb(25, 25, 25);
+  color: white;
+  font-family: Arial;
+}
+
+.title {
+  font-size: 3.125rem;
+}
+
+.move-icon {
+  height: 3.125rem;
+}
+
+.move-button {
+  height: 7.5rem;
+  width: 7.5rem;
+  background-color: transparent;
+  border: 0.1875rem solid white;
+  border-radius: 50%;
+  margin-right: 0.625rem;
+  cursor: pointer;
+}
+
+.result {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1.725rem;
+}
+
+.moves {
+  margin-bottom: 4rem;
+}
+
+.reset-button {
+  font-size: 0.9375rem;
+  padding: 0.425rem 0.725rem;
+  cursor: pointer;
+}
+
+.link {
+  color: white;
+}

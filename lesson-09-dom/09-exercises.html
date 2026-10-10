@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>09-Exercises</title>
+  </head>
+  <body>
+    <p><a href="./09-dom.html">Back</a></p>
+    <!-- 9d to 9f -->
+    <input type="text" class="js-input-element" onkeydown="keyDownEnter(event)" placeholder="Name" / >
+    <button onclick="input()" class="js-submit-button">Submit</button>
+    <p class="js-name-display"></p>
+    <!-- 9a to 9c -->
+    <!-- <button>9a</button>
+    <button class="second">9b</button>
+    <button onclick="choiceButton('heads')" class="heads">heads</button>
+    <button onclick="choiceButton('tails')" class="tails">tails</button>
+    <p class="js-choice-button"></p> -->
+
+    <script>
+      // 9d to 9f
+      function keyDownEnter(event) {
+        console.log(event.key);
+        if (event.key === "Enter") {
+          input();
+        }
+      }
+
+      function input(event) {
+        const text = document.querySelector(".js-input-element").value;
+
+        document.querySelector(".js-name-display").innerHTML =
+          `Your name is: ${text}`; 
+      }
+      /* 9a to 9c
+      function choiceButton(choice) {
+        const result = `You chose: ${choice}`;
+
+        document.querySelector(".js-choice-button").innerHTML = result;
+      }
+
+      console.log(document.querySelector("button"));
+      document.querySelector(".second").innerHTML = "9b done!";
+      */
+    </script>
+  </body>
+</html>
