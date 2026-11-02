@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advance Function Exercises</title>
+  </head>
+  <body>
+    <p><a href="./13-advance-function.html">Back</a></p>
+
+    <!-- <button class="js-button" onclick="changeText()">Start</button>
+
+    <button onclick="displayAdd()">Add to cart</button>
+    <p class="js-display"></p> -->
+
+    <button onclick="addMessage()">Add</button>
+    <button onclick="removeMessage()">Remove</button>
+
+    <script>
+      //12i.
+      let messages = 0;
+      let intervalId;
+      let isDisplayingNotification = false;
+
+      function displayNotification() {
+        if (isDisplayingNotification || messages === 0) {
+          return;
+        }
+
+        isDisplayingNotification = true;
+
+        intervalId = setInterval(function () {
+          if (document.title === "App") {
+            document.title = `(${messages}) New messages`;
+          } else {
+            document.title = "App";
+          }
+        }, 1000);
+      }
+
+      function stopNotification() {
+        isDisplayingNotification = false;
+        clearInterval(intervalId);
+        document.title = "App";
+      }
+
+      function addMessage() {
+        messages++;
+        displayNotification();
+      }
+
+      function removeMessage() {
+        if (messages > 0) {
+          messages--;
+        }
+
+        if (messages === 0) {
+          stopNotification();
+        }
+      }
+
+      displayNotification();
+
+      /*
+      //12h.
+      let messages = 2;
+
+      setInterval(function() {
+        if (document.title === 'App') {
+          document.title = `(${messages}) New messages`;
+        } else {
+          document.title = 'App';
+        }
+      }, 1000);
+      */
+      // setInterval(function () {
+      //   count++;
+      //   document.title = `(${count}) New messages`;
+      // }, 1000);
+
+      // let count = 3;
+      // let showMessage = false;
+
+      //  setInterval(function () {
+      //   if (!showMessage) {
+      //     document.title = `(${count}) New messages`;
+      //     showMessage = true;
+      //   } else {
+      //     document.title = "App";
+      //     showMessage = false;
+      //   }
+      // }, 1000);
+
+      /*
+      //12g.
+     
+      setInterval(function () {
+        if (document.title === 'App') {
+          document.title = '(2) New messages';
+        } else {
+          document.title = 'App';
+        }
+      }, 1000);
+      */
+
+      /*
+      //12f.
+      let timeoutId;
+      function displayAdd() {
+        clearTimeout(timeoutId);
+        const display = document.querySelector(".js-display");
+        display.innerHTML = "Added";
+        timeoutId = setTimeout(function () {
+          display.innerHTML = "";
+        }, 2000);
+      }
+        */
+
+      /*
+      //12e.
+      function displayAdd() {
+        const display = document.querySelector(".js-display");
+        display.innerHTML = "Added";
+        setTimeout(function () {
+          display.innerHTML = "";
+        }, 2000);
+      }
+     */
+
+      /*
+      //12c.
+      function changeText() {
+        const button = document.querySelector(".js-button");
+        button.innerHTML = "Loading...";
+        setTimeout(function onClicks() {
+          button.innerHTML = "Finished!";
+        }, 1000);
+      }
+      */
+
+      /*
+      //13b.
+      const add = function () {
+        console.log(2 + 3);
+      };
+
+      function runTwice(fun) {
+        fun();
+        fun();
+      }
+
+      runTwice(add);
+
+      runTwice(function () {
+        console.log("12b");
+      });
+      */
+
+      /*
+      //13a.
+      const add = function () {
+        console.log(2 + 3);
+      };
+      add();
+      add();
+      */
+    </script>
+  </body>
+</html>

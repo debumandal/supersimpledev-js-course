@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List</title>
+    <link rel="stylesheet" href="./Styles/13-todo-list.css" />
+  </head>
+  <body>
+    <p><a href="./13-advance-function.html">Back</a></p>
+    <p>Todo List</p>
+
+    <div class="todo-input-grid">
+      <input
+        class="js-input-element input-text-element"
+        type="text"
+        placeholder="Todo name"
+      />
+
+      <input type="date" class="js-date-input-element date-element" />
+
+      <button onclick="addTodo()" class="add-button">Add</button>
+    </div>
+
+    <div class="js-todo-list todo-list"></div>
+
+    <script src="./Scripts/13-todo-list.js"></script>
+  </body>
+</html>

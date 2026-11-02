@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advance Function</title>
+  </head>
+  <body>
+    <p><a href="../index.html">Back to Home</a></p>
+    <p><a href="./13-rock-paper-scissors.html">Rock-Paper-Scissors</a></p>
+    <p><a href="./13-todo-list.html">Todo List Using forEach</a></p>
+    <p><a href="./13-exercises.html">Advance Function Exercises</a></p>
+
+    <script>
+      ["make dinner", "wash dishes", "make a wish"].forEach(
+        function (value, index) {
+          if (value === "wash dishes") {
+            return; // acts as a continue
+          }
+          console.log(index);
+          console.log(value);
+        },
+      );
+      /*
+      //asynchronous code (won't wait for line to finish)
+      setTimeout(function () {
+        console.log("timeout");
+      }, 3000);
+
+      console.log("next line");
+      */
+
+      // setInterval(function () {
+      //   console.log("interval");
+      // }, 3000);
+
+      /*
+      // Function as a value
+
+      greeting(); // calling a function
+      function greeting() {
+        console.log("hello");
+      }
+
+      const function1 = function () {
+        console.log("hello2");
+      };
+
+      function1();
+
+      const object = {
+        num: 2,
+        fun: function () {
+          console.log("hello3");
+        },
+      };
+      object.fun();
+
+      // passing a value through a function
+      function greetings(parameter) {
+        console.log(parameter);
+      }
+
+      greetings("hello4");
+      greetings("Debu");
+      greetings("JavaScript");
+
+      function run(param) {
+        param();
+      }
+
+      run(function greeting() {
+        console.log("hello5");
+      });
+      */
+    </script>
+  </body>
+</html>
