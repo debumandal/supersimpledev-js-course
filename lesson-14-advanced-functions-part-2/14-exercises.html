@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advance Function Part-2</title>
+  </head>
+  <body>
+    <p><a href="./14-advanced-functions-part-2.html">Back</a></p>
+
+    <!-- <button class="js-button">Start</button>
+    <button class="add-to-cart-button">Add to cart</button>
+    <p class="js-display"></p> -->
+
+    <button class="js-add-button">Add</button>
+    <button class="js-remove-button">Remove</button>
+
+    <script>
+      /////////12p. and 12q.
+
+      //12i.
+      let messages = 0;
+      let intervalId;
+      let isDisplayingNotification = false;
+
+      const displayNotification = () => {
+        if (isDisplayingNotification || messages === 0) {
+          return;
+        }
+
+        isDisplayingNotification = true;
+
+        intervalId = setInterval(() => {
+          if (document.title === "App") {
+            document.title = `(${messages}) New messages`;
+          } else {
+            document.title = "App";
+          }
+        }, 1000);
+      };
+
+      const stopNotification = () => {
+        isDisplayingNotification = false;
+        clearInterval(intervalId);
+        document.title = "App";
+      };
+
+      const addButton = document.querySelector(".js-add-button");
+
+      addButton.addEventListener("click", () => {
+        messages++;
+        displayNotification();
+      });
+
+      const removeButton = document.querySelector(".js-remove-button");
+
+      removeButton.addEventListener("click", () => {
+        if (messages > 0) {
+          messages--;
+        }
+
+        if (messages === 0) {
+          stopNotification();
+        }
+      });
+
+      displayNotification();
+
+      //12h.
+      /*
+
+      let messages = 2;
+
+      setInterval(() => {
+        if (document.title === "App") {
+          document.title = `(${messages}) New messages`;
+        } else {
+          document.title = "App";
+        }
+      }, 1000);
+      */
+
+      //12g.
+      /*
+      setInterval(() => {
+        if (document.title === "App") {
+          document.title = "(2) New messages";
+        } else {
+          document.title = "App";
+        }
+      }, 1000);
+      */
+
+      /*
+      //12f.
+      let timeoutId;
+      function displayAdd() {
+        clearTimeout(timeoutId);
+        const display = document.querySelector(".js-display");
+        display.addEventListener("click", () => {
+          display.innerHTML = "Added";
+          timeoutId = setTimeout(() => {
+            display.innerHTML = "";
+          }, 2000);
+        });
+      }
+
+      displayAdd();
+      */
+
+      //12e.
+      /*
+      const displayAdd = () => {
+        const addToCartButton = document.querySelector(".add-to-cart-button");
+        const display = document.querySelector(".js-display");
+        addToCartButton.addEventListener("click", () => {
+          display.innerHTML = "Added";
+          setTimeout(() => {
+            display.innerHTML = "";
+          }, 2000);
+        });
+      };
+
+      displayAdd();
+      */
+
+      /*
+      //12c.
+      const changeText = () => {
+        const button = document.querySelector(".js-button");
+        button.addEventListener("click", () => {
+          button.innerHTML = "Loading...";
+
+          setTimeout(() => {
+            button.innerHTML = "Finished!";
+          }, 1000);
+        });
+      };
+
+      changeText();
+      */
+
+      /*
+      //12o.
+      const removeEgg = (foods) => {
+        let eggCount = 0;
+        const food = foods.filter((food) => {
+          if (food === "egg" && eggCount < 2) {
+            eggCount++;
+            return false;
+          } else {
+            return true;
+          }
+        });
+        return food;
+      };
+
+      console.log(removeEgg(["egg", "apple", "egg", "egg", "ham"]));
+      console.log(removeEgg(["apple", "egg", "banana", "egg", "egg", "fish"]));
+      */
+
+      /*
+      //12n.
+      const removeEgg = (foods) => {
+        return foods.filter((food) => food !== "egg");
+      };
+
+      console.log(removeEgg(["egg", "apple", "egg", "egg", "ham"]));
+      */
+
+      /*
+      //12m.
+      function addNum(array, num) {
+        const arrays = array.map((nums) => nums + num);
+        return arrays;
+      }
+
+      console.log(addNum([1, 2, 3], 2));
+      console.log(addNum([-2, -1, 0, 99], 2));
+      */
+
+      /*
+      //12l.
+      function countPositive(nums) {
+        let count = 0;
+
+        nums.forEach((num) => {
+          if (num > 0) {
+            count++;
+          }
+        });
+        return count;
+      }
+      console.log(countPositive([1, -3, 5]));
+      console.log(countPositive([-2, 3, -5, 7, 10]));
+      */
+
+      /*
+      //12j. and 12k.
+      const multiply = (num1, num2) => num1 * num2;
+      console.log(multiply(2, 3));
+      console.log(multiply(7, 10));
+      */
+    </script>
+  </body>
+</html>

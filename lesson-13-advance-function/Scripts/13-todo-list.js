@@ -3,11 +3,15 @@ const todoList = [
   { name: "wash dishes", dueDate: "2026-10-25" },
 ];
 
+document.querySelector(".js-add-todo-button").addEventListener("click", () => {
+  addTodo();
+});
+
 renderTodoList();
 function renderTodoList() {
   let todoListHtmlStorage = "";
 
-  todoList.forEach(function (todoObject, index) {
+  todoList.forEach((todoObject, index) => {
     // const todoObject = todoList[index];
     // const name = todoObject.name;
     // const dueDate = todoObject.dueDate;
@@ -15,16 +19,20 @@ function renderTodoList() {
     const [year, month, day] = dueDate.split("-");
     const todoListHtml = `<div>${name}</div>
      <div>${month}-${day}-${year}</div> 
-     <button class="todo-delete-button" onclick="
-      todoList.splice(${index},1);
-      renderTodoList();
-    "
+     <button class="todo-delete-button js-todo-delete-button" 
     >Delete</button>`;
     todoListHtmlStorage += todoListHtml;
   });
 
   document.querySelector(".js-todo-list").innerHTML = todoListHtmlStorage;
-  console.log(todoListHtmlStorage);
+  document
+    .querySelectorAll(".js-todo-delete-button")
+    .forEach((deleteButton, index) => {
+      deleteButton.addEventListener("click", () => {
+        todoList.splice(index, 1);
+        renderTodoList();
+      });
+    });
 }
 
 function addTodo() {
